@@ -1,1 +1,0 @@
-webpackJsonp([1],[function(e,t,n){e.exports=n(1)},function(e,t,n){"use strict";function o(e){return e&&e.__esModule?e:{"default":e}}var u=n(2),c=o(u);!function(){(0,c["default"])(),console.log("test2213")}()},function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var n=function(){console.log("Hi! I'm an example module")};t["default"]=n}]);
