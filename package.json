@@ -9,12 +9,11 @@
     "lint:php": "phpcs --ignore=src/*/vendor/* src/**/*.php",
     "lint": "npm run lint:scss && npm run lint:js && npm run lint:php",
     "clean:dist": "rm -r dist && mkdir dist",
-    "clean:build": "rm -r public/wp-content/themes/example/*",
     "dev": "webpack-dev-server --config webpack.config.js --progress",
     "build": "npm run lint && npm run test && npm run clean:dist && npm run build:gulp && npm run build:webpack",
     "build:webpack": "NODE_ENV=production webpack -p --config webpack.production.config.js --cheap-module-source-map --progress",
     "build:gulp": "gulp build-production",
-    "start": "npm run clean:build && gulp init && gulp",
+    "start": "gulp init && gulp",
     "deploy": "npm run build && npm run commit",
     "commit": "git add dist/* && git commit -m 'New build' && git push"
   },
