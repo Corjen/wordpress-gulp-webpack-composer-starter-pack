@@ -11,7 +11,7 @@ gulp.task('browsersync', () => {
     notify: false,
     open: false,
     port: 3000,
-    proxy: 'coolideasacademy.dev',
+    proxy: config.proxy,
     watchOptions: {
       debounceDelay: 2000
     }

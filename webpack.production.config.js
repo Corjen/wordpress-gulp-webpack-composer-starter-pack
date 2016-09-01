@@ -1,15 +1,13 @@
 const webpack = require('webpack')
 const path = require('path')
 const AssetsPlugin = require('assets-webpack-plugin')
-const assetsPluginInstance = new AssetsPlugin()
 
 module.exports = {
   entry: {
-    app: [
-      path.resolve(__dirname, 'src/app/main.js'),
+    main: [
       path.resolve(__dirname, 'src/js/main.js')
     ],
-    vendors: ['react', 'react-dom', 'sizzle']
+    vendors: []
   },
   output: {
     path: path.resolve(__dirname, 'dist/js'),
@@ -22,7 +20,7 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'babel',
         query: {
-          presets: ['react', 'es2015']
+          presets: ['es2015']
         }
       }
     ]

@@ -4,7 +4,6 @@
 const gulp = require('gulp')
 const plugins = require('gulp-load-plugins')({ camelize: true })
 const config = require('../gulpconfig.js')
-const changedInPlace = require('gulp-changed-in-place')
 
 /**
  * PHP files
@@ -30,6 +29,21 @@ gulp.task('style-css-build', () => {
 gulp.task('style-css-build-production', () => {
   return gulp.src('src/style.css')
     .pipe(gulp.dest(config.dist))
+})
+
+/**
+ * Fonts
+ */
+gulp.task('theme-fonts-build', () => {
+  return gulp.src(config.src.fonts)
+   .pipe(plugins.changed(config.build))
+   .pipe(gulp.dest(config.build + '/fonts/'))
+})
+
+gulp.task('theme-fonts-build-production', () => {
+  return gulp.src(config.src.fonts)
+    .pipe(plugins.changed(config.dist))
+    .pipe(gulp.dest(config.dist + '/fonts'))
 })
 
 /**
@@ -67,5 +81,20 @@ gulp.task('theme-composer-build-production', () => {
     .pipe(gulp.dest(config.dist + '/vendor'))
 })
 
-gulp.task('theme-build', ['theme-php-build', 'style-css-build', 'theme-json-build', 'theme-assets-build', 'theme-composer-build'])
-gulp.task('theme-build-production', ['theme-php-build-production', 'style-css-build-production', 'theme-json-build-production', 'theme-assets-build-production', 'theme-composer-build-production'])
+gulp.task('theme-build', [
+  'theme-php-build',
+  'style-css-build',
+  'theme-json-build',
+  'theme-assets-build',
+  'theme-composer-build',
+  'theme-fonts-build'
+])
+
+gulp.task('theme-build-production', [
+  'theme-php-build-production',
+  'style-css-build-production',
+  'theme-json-build-production',
+  'theme-assets-build-production',
+  'theme-composer-build-production',
+  'theme-fonts-build-production'
+])

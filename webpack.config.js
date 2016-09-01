@@ -1,13 +1,12 @@
 const webpack = require('webpack')
 const path = require('path')
 const devIp = require('dev-ip')()
-
+const config = require('./gulpconfig')
 const host = devIp[0] || 'localhost'
 
 module.exports = {
   entry: {
     app: [
-      path.resolve(__dirname, 'src/app/main.js'),
       path.resolve(__dirname, 'src/js/main.js'),
       'webpack/hot/dev-server',
       'webpack-dev-server/client?http://' + host + ':8080/'
@@ -15,9 +14,9 @@ module.exports = {
   },
   output: {
     app: {
-      path: path.resolve(__dirname, '/public/wp-content/themes/coolideasacademy/js/'),
+      path: path.resolve(__dirname, config.webpackPublicPath),
       filename: 'bundle.js',
-      publicPath: path.resolve(__dirname, '/public/wp-content/themes/coolideasacademy/js/')
+      publicPath: path.resolve(__dirname, config.webpackPublicPath)
     }
   },
   devtool: 'source-map',
@@ -28,17 +27,18 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'babel',
         query: {
-          presets: ['react', 'es2015']
+          presets: ['es2015']
         }
       }
     ]
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin()
   ],
   devServer: {
     port: 8080,
-    contentBase: path.resolve(__dirname, '/public/wp-content/themes/coolideasacademy/js/'),
+    contentBase: path.resolve(__dirname, config.webpackPublicPath),
     historyApiFallback: true,
     hot: true,
     host: host,
