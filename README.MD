@@ -66,7 +66,7 @@ Building for production will do a couple of tasks(in order):
 - SCSS - using [scss-lint](https://github.com/brigade/scss-lint) (using the `.scss-lint.yml` file in the root folder)
 - JavaScript - using [standard](https://github.com/feross/standard)
 
-*You can, of course, change this to your liking, or disable it at all by removing `npm run lint &&` from the *build* script in `package.json`*
+*You can, of course, change this to your liking, or disable it at all by removing `npm run lint &&` from the build script in `package.json`*
 
 **Test**
 - You can fill in your own preferred testing utility here. Currently it's just an empty script.
@@ -87,14 +87,14 @@ Building for production will do a couple of tasks(in order):
   - `main[hash].js` e.g. `main.95fc79345faed5f17dc2.js`
   - `webpack-asset.json`
 
-  The vendors file will contain the vendor scripts given in `webpack.production.config.js` in this array `vendors: []`. This is useful for packages that you don't update as often as the rest of your code. For example, if you use jQuery and React add it like so: `vendors: ['jquery', 'react']`
+  The vendors file will contain the packages given in `webpack.production.config.js` in this array `vendors: []`. This is useful for packages that you don't update as often as the rest of your code. For example, if you use jQuery and React add it like this: `vendors: ['jquery', 'react']`
 
   Ensure the vendors script is added before the main script in your html. See the example in `lib/Settings.php`
 
 Additional tips & tricks
 ------------------------
 
-When on a new project, it can be useful to build for production, commit the *dist/* folder and push in a single command. You can do that by running `npm run deploy`
+When you're developing a new project, it can be useful to build for production, commit the *dist/* folder and push in a single command. You can do that by running `npm run deploy`
 
 Deploying
 ------------------------
