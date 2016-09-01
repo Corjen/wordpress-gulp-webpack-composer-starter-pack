@@ -8,6 +8,4 @@ import ExampleModule from './modules/ExampleModule'
 
 ;(function IIFE () {
   ExampleModule()
-
-  console.log('test2213')
 })()
