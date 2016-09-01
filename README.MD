@@ -26,14 +26,16 @@ This is a starter pack for developing WordPress themes. The project structure is
 
 Getting started
 ---------------
-- Clone or download this repo and run ```npm install``` inside the root folder
+- Clone this repo by running `git clone --recursive https://github.com/Corjen/wordpress-gulp-webpack-composer-starter-pack.git my_project_folder`
+- Run ```npm install``` inside the root folder
 - You need a local php server to run Wordpres. The */public* folder is the folder you need to point your server to. I use this in conjunction with this repo: [vagrant-ubuntu-16.04-php7-mysql-provision](https://github.com/Corjen/vagrant-ubuntu-16.04-php7-mysql-provision), but you could also use MAMP or another solution.
 - The */src* directory is prefilled with some examples, please check ik out
+- Create your theme folder in public/wp-content/themes/YOUR_THEME_NAME and add the path in `.gitignore`
 
 Change files
 ------------
 Your project/theme probably isn't called *example*, so we need to change it in these files:
-  - ```gulpconfig.js```  - Change *example.dev* to your local development url. Also, copy the build folder path here and change it in ```.gitignore``` since we don't need the local build folder in our repo
+  - ```gulpconfig.js```  - Change *example.dev* to your local development url.
   - You might also change ```package.json``` and ```src/componser.json``` to your liking
   - We use Composer to autoload classes, so we have to be aware of the namespace. Check the following files and change the namespace: ```src/functions.php```, ```src/lib/AdminSettings.php```, ```src/lib/Cleanup.php```, ```src/lib/Settings.php```. *You could of course include files in ```functions.php``` manually and remove the examples files.*
   - Change the url's in ```public/wp-config.php```. This loads a config file from the `public/config` folder based on the ```WP_ENV``` constant. This will be `dev`, `stage` or `production`. You can also use this constant in your code, which can be quite handy.
