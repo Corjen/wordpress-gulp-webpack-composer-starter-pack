@@ -17,8 +17,6 @@ require 'vendor/autoload.php';
  */
 new Cleanup();
 new Settings();
-new Test();
-new Test2();
 
 if ( is_admin() ) {
   new AdminSettings();
