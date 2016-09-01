@@ -35,8 +35,8 @@ Getting started
 Change files
 ------------
 Your project/theme probably isn't called *example*, so we need to change it in these files:
-  - ```gulpconfig.js```  - Change *example.dev* to your local development url.
-  - You might also change ```package.json``` and ```src/componser.json``` to your liking
+  - ```gulpconfig.js```  - Change *example.dev* to your local development url. Change to other occurences of *example* to your theme folder name
+  - You might also change ```package.json``` and ```src/composer.json``` to your liking
   - We use Composer to autoload classes, so we have to be aware of the namespace. Check the following files and change the namespace: ```src/functions.php```, ```src/lib/AdminSettings.php```, ```src/lib/Cleanup.php```, ```src/lib/Settings.php```. *You could of course include files in ```functions.php``` manually and remove the examples files.*
   - Change the url's in ```public/wp-config.php```. This loads a config file from the `public/config` folder based on the ```WP_ENV``` constant. This will be `dev`, `stage` or `production`. You can also use this constant in your code, which can be quite handy.
   - Change the host, database credentials and keys and salts in `public/config/development.php`, `public/config/staging.php` and `public/config/production.php`
