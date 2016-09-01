@@ -1,0 +1,13 @@
+{
+    "name": "example/lib",
+    "require": {},
+    "autoload" : {
+      "classmap": [
+        "lib/"
+
+      ],
+      "psr-4" : {
+        "lib\\" : "lib/"
+      }
+    }
+}
