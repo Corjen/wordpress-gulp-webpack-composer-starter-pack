@@ -1,7 +1,7 @@
 {
-  "name": "wordpress-gulp-webpack-composer-starter-pack",
+  "name": "Molenaar",
   "version": "1.0.0",
-  "description": "Starter pack for wordpress theme development. Includes gulp (with production build), webpack, composer, critical css, unit testing, linting, etc..",
+  "description": "Repo for molenaar.nl",
   "main": "gulpconfig.js",
   "scripts": {
     "lint:js": "standard 'src/**/*.js'",
