@@ -3,9 +3,9 @@
  */
 
 var config = {
-  'build': 'public/wp-content/themes/example',
-  'webpackPublicPath': 'public/wp-content/themes/example/js',
-  'proxy': 'http://example.dev/',
+  'build': 'public/wp-content/themes/molenaar',
+  'webpackPublicPath': 'public/wp-content/themes/molenaar/js',
+  'proxy': 'http://molenaarv2.dev/',
   'dist': 'dist',
   src: {
     php: 'src/**/*.php',
